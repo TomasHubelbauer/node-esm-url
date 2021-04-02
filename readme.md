@@ -50,3 +50,14 @@ node --experimental-loader ./node-esm-url/index.js
 The loader needs an ability to recognize `file:` specifiers whose `parentURL`
 (in `context`) is coming from `node_modules` and download those so that the
 referenced URL ESM modules can themselves depend on other modules.
+
+### Take inspiration from the example loader in Node documentation
+
+I just noticed the loader documentation talks about a HTTP/HTTPS loader as well
+as gives an example of one:
+
+https://nodejs.org/api/esm.html#esm_https_loader
+
+The implementation is cleaner than mine and it looks like it will cleanly
+support ESM within the downloaded module. Test it and if it works well, replace
+this repository with it.
